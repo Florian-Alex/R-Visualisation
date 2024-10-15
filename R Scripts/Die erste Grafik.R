@@ -1,4 +1,4 @@
-Daten <- read.csv("/Users/florian/Downloads/Datensatz.csv")
+Daten <- read.csv("Dateipfad")
 
 head(Daten)
 
@@ -9,6 +9,8 @@ library(ggplot2)
 ## eingebauten Befehle
 
 plot(Daten$Alter, Daten$Gehalt)
+
+# grafik mit ggplot2
 
 ggplot(Daten, aes(x=Alter, y=Gehalt)) + geom_point(size=2.5) + geom_smooth(method = "lm", se=FALSE, color="red") +
   labs(
@@ -29,4 +31,4 @@ ggplot(Daten, aes(x=Alter, y=Gehalt)) + geom_point(size=2.5) + geom_smooth(metho
     panel.grid.major = element_line(size=0.2, colour = "grey")
   )
 
-ggsave("/Users/florian/Downloads/grafikroh.jpg", p, dpi = 300, width = 15, height = 9) 
+ggsave("Dateipfad", p, dpi = 300, width = 15, height = 9) 
